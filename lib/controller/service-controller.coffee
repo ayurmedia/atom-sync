@@ -81,16 +81,19 @@ module.exports = ServiceController =
 
   # Core
   genRemoteString: (user, remoteAddr, remotePath) ->
-    remotePathUnix = remotePath.replace("\\","/")
-    # fix Backslash to Slash on Windows
-    result = "#{remoteAddr}:#{remotePathUnix}"
+    result = "#{remoteAddr}:#{remotePath}"
     result = "#{user}@#{result}" if user
 
   sync: (src, dst, config = {}, provider, complete) ->
     delay = config.option?.autoHideDelay or 1500
 
+    # Fix Unix Path Delimiters
+    src = src.replace /\\/g, "/"
+    src = src.replace /^([A-Z])\:/ , "/cygdrive/$1"
+    dst = dst.replace /\\/g, "/"
+    dst = dst.replace /^([A-Z])\:/ , "/cygdrive/$1"
     @console.show() if not config.behaviour.forgetConsole
-    @console.info "=> Syncing from #{src} to #{dst} ..."
+    @console.info "=> Syncing from #{src} to #{dst} "
 
     (require '../service/' + provider)
       src: src,
