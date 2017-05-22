@@ -17,23 +17,23 @@ atom-sync is an Atom package to sync files bidirectionally between remote host a
 * Ensure you have `ssh` and `rsync` installed.
 
 * Special on Windows
- * Install Cygwin from https://cygwin.org
- * Select "openssh" and "rsync" from packages and install them
- * rsync is not awailable in the cygwin-shell, but ...
- * add the cygwin/bin folder to %PATH% so that rsync is globally in cmd.exe
+  * Install Cygwin from https://cygwin.org
+  * Select "openssh" and "rsync" from packages and install them
+  * rsync is not awailable in the cygwin-shell, but ...
+  * add the cygwin/bin folder to %PATH% so that rsync is globally in cmd.exe
 
 * Add Path to Cygwin-Bin in windows 10
- * right-click on "start-menu" choose "System"
- * choose "advanced settings"
- * change "environment variables"
- * in the lower path select "PATH"
- * click "New"
- * Add Path to your Cygwin-Installation e.g. "C:\cygwin\bin"
- * close dialogs
- * now atom should be able to use ssh + rsync
- * to proberly use ssh without password with autorized_keys, you need to have .ssh folder etc. 
- * in cygwin you can open "cygwin terminal" and check by "ls .ssh"
- * maybe you need to create a pub-key with "ssh-keygen", look in internet for further instructions.
+  * right-click on "start-menu" choose "System"
+  * choose "advanced settings"
+  * change "environment variables"
+  * in the lower path select "PATH"
+  * click "New"
+  * Add Path to your Cygwin-Installation e.g. "C:\cygwin\bin"
+  * close dialogs
+  * now atom should be able to use ssh + rsync
+  * to proberly use ssh without password with autorized_keys, you need to have .ssh folder etc. 
+  * in cygwin you can open "cygwin terminal" and check by "ls .ssh"
+  * maybe you need to create a pub-key with "ssh-keygen", look in internet for further instructions.
 
 
 ### Quick Start ###
