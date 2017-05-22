@@ -81,7 +81,9 @@ module.exports = ServiceController =
 
   # Core
   genRemoteString: (user, remoteAddr, remotePath) ->
-    result = "#{remoteAddr}:#{remotePath}"
+    remotePathUnix = remotePath.replace("\\","/")
+    # fix Backslash to Slash on Windows
+    result = "#{remoteAddr}:#{remotePathUnix}"
     result = "#{user}@#{result}" if user
 
   sync: (src, dst, config = {}, provider, complete) ->
