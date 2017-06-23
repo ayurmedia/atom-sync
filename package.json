@@ -8,7 +8,9 @@
     "ssh",
     "sftp",
     "rsync",
-    "remote"
+    "remote",
+    "cygwin",
+    "windows"
   ],
   "repository": "https://github.com/ayurmedia/atom-sync-cygwin",
   "license": "MIT",
