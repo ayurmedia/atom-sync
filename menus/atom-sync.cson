@@ -5,15 +5,15 @@
     'submenu': [
       {
         'label': 'Edit Sync Config'
-        'command': 'atom-sync:configure'
+        'command': 'atom-sync-cygwin:configure'
       }
       {
         'label': 'Sync Remote -> Local'
-        'command': 'atom-sync:download-directory'
+        'command': 'atom-sync-cygwin:download-directory'
       }
       {
         'label': 'Sync Local -> Remote'
-        'command': 'atom-sync:upload-directory'
+        'command': 'atom-sync-cygwin:upload-directory'
       }
     ]
   ]
@@ -23,11 +23,11 @@
     'submenu': [
       {
         'label': 'Download File'
-        'command': 'atom-sync:download-file'
+        'command': 'atom-sync-cygwin:download-file'
       }
       {
         'label': 'Upload File'
-        'command': 'atom-sync:upload-file'
+        'command': 'atom-sync-cygwin:upload-file'
       }
     ]
   ]

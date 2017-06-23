@@ -1,15 +1,27 @@
-# atom-sync package
+# atom-sync-cygwin package
 
-atom-sync is an Atom package to sync files bidirectionally between remote host and local over ssh+rsync. Inspired by [Sublime SFTP](http://wbond.net/sublime_packages/sftp).
+atom-sync-cygwin is an Atom package to sync files bidirectionally between remote host and local over ssh+rsync.
+Inspired by [Sublime SFTP](http://wbond.net/sublime_packages/sftp).
 
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)[![Build Status](https://travis-ci.org/dingjie/atom-sync.svg?branch=master)](https://travis-ci.org/dingjie/atom-sync)
 
-> This package is currently in early development and has only been tested on Mac. Please kindly [try it out](http://atom.io/packages/atom-sync) and [provide feedback](https://github.com/dingjie/atom-sync/issues/new).
-
+> This package is currently in early development and has only been tested on Mac.
+Please kindly [try it out](http://atom.io/packages/atom-sync)
+and [provide feedback](https://github.com/dingjie/atom-sync/issues/new).
 ![atom-sync](https://cloud.githubusercontent.com/assets/586262/8085519/2b63a7c4-0fc3-11e5-930a-685b09fe7af3.gif)
 
+> This package is a clone of atom-sync and has a patch to use cygwin emulation on windows.
+If you install "openssh rsync" on windows via cygwin (https://cygwin.org),
+then you can use the plugin also on Windows which then emulates the rsync inside cygwin.
+You need to put your C:/cygwin/bin/ in to %PATH% so that ssh and rsync are used on cmd.exe or atom.exe .
+
+This Package still works fine under Mac, because there is no path C: , so the patch is ignored there.
+
+To Prevent conflicts with the original atom-sync plugin this one is renamed to atom-sync-cygwin .
+
 ### Feature ###
-* Sync over ssh+rsync — still [secure](http://www.sakana.fr/blog/2008/05/07/securing-automated-rsync-over-ssh/), but much [faster](http://stackoverflow.com/questions/20244585/what-is-the-difference-between-scp-and-rsync).
+* Sync over ssh+rsync — still [secure](http://www.sakana.fr/blog/2008/05/07/securing-automated-rsync-over-ssh/),
+but much [faster](http://stackoverflow.com/questions/20244585/what-is-the-difference-between-scp-and-rsync).
 * [Multi-Folder Projects](http://blog.atom.io/2015/04/15/multi-folder-projects.html) with different sync config files supported
 * Triggers conditionally run commands after successful uploading
 
@@ -30,11 +42,12 @@ atom-sync is an Atom package to sync files bidirectionally between remote host a
   * click "New"
   * Add Path to your Cygwin-Installation e.g. "C:\cygwin\bin"
   * close dialogs
-  
+
 * now atom should be able to use ssh + rsync
-  * to proberly use ssh without password with autorized_keys, you need to have .ssh folder etc. 
+  * to proberly use ssh without password with autorized_keys, you need to have .ssh folder etc.
   * in cygwin you can open "cygwin terminal" and check by "ls .ssh"
   * maybe you need to create a pub-key with "ssh-keygen", look in internet for further instructions.
+  * best to create a pub-key without password, so that you dont have to type password always.
 
 
 ### Quick Start ###

@@ -87,7 +87,7 @@ module.exports = ServiceController =
   sync: (src, dst, config = {}, provider, complete) ->
     delay = config.option?.autoHideDelay or 1500
 
-    # Fix Unix Path Delimiters
+    # Fix Unix Path Delimiters for windows with help of cygwin
     src = src.replace /\\/g, "/"
     src = src.replace /^([A-Z])\:/ , "/cygdrive/$1"
     dst = dst.replace /\\/g, "/"
