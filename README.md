@@ -5,15 +5,15 @@ Inspired by [Sublime SFTP](http://wbond.net/sublime_packages/sftp).
 
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)[![Build Status](https://travis-ci.org/dingjie/atom-sync.svg?branch=master)](https://travis-ci.org/dingjie/atom-sync)
 
-> This package is currently in early development and has only been tested on Mac.
-Please kindly [try it out](http://atom.io/packages/atom-sync)
-and [provide feedback](https://github.com/dingjie/atom-sync/issues/new).
-![atom-sync](https://cloud.githubusercontent.com/assets/586262/8085519/2b63a7c4-0fc3-11e5-930a-685b09fe7af3.gif)
 
-> This package is a clone of atom-sync and has a patch to use cygwin emulation on windows.
+> This package is a clone of atom-sync and has a patch to use cygwin emulation on Windows.
 If you install "openssh rsync" on windows via cygwin (https://cygwin.org),
 then you can use the plugin also on Windows which then emulates the rsync inside cygwin.
 You need to put your C:/cygwin/bin/ in to %PATH% so that ssh and rsync are used on cmd.exe or atom.exe .
+
+Please kindly [try it out](http://atom.io/packages/atom-sync)
+and [provide feedback](https://github.com/dingjie/atom-sync/issues/new).
+![atom-sync](https://cloud.githubusercontent.com/assets/586262/8085519/2b63a7c4-0fc3-11e5-930a-685b09fe7af3.gif)
 
 This Package still works fine under Mac, because there is no path C: , so the patch is ignored there.
 
@@ -44,10 +44,10 @@ but much [faster](http://stackoverflow.com/questions/20244585/what-is-the-differ
   * close dialogs
 
 * now atom should be able to use ssh + rsync
-  * to proberly use ssh without password with autorized_keys, you need to have .ssh folder etc.
+  * to properly use ssh without password with autorized_keys, you need to have .ssh folder etc.
   * in cygwin you can open "cygwin terminal" and check by "ls .ssh"
   * maybe you need to create a pub-key with "ssh-keygen", look in internet for further instructions.
-  * best to create a pub-key without password, so that you dont have to type password always.
+  * best to create a pub-key without password, so that you don't have to type password always.
 
 
 ### Quick Start ###
@@ -148,7 +148,9 @@ Host *
 
 ### Known Problems ###
 * You have to `Sync Local -> Remote` manually after renaming and deleting files.
-
+* Console now has no formatting since Atom 1.17 and 1.18 as @console.show has been changed.
+  * the package still works, i try to find a fix for it and publish it in version 0.8.1
+  
 ### Roadmap ###
 * Listen to events
   * Create folders
