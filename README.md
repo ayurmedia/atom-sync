@@ -11,8 +11,8 @@ If you install "openssh rsync" on windows via cygwin (https://cygwin.org),
 then you can use the plugin also on Windows which then emulates the rsync inside cygwin.
 You need to put your C:/cygwin/bin/ in to %PATH% so that ssh and rsync are used on cmd.exe or atom.exe .
 
-Please kindly [try it out](http://atom.io/packages/atom-sync)
-and [provide feedback](https://github.com/dingjie/atom-sync/issues/new).
+Please kindly [try it out](http://atom.io/packages/atom-sync-cygwin)
+and [provide feedback](https://github.com/ayurmedia/atom-sync-cygwin/issues/new).
 ![atom-sync](https://cloud.githubusercontent.com/assets/586262/8085519/2b63a7c4-0fc3-11e5-930a-685b09fe7af3.gif)
 
 This Package still works fine under Mac, because there is no path C: , so the patch is ignored there.
