@@ -149,7 +149,7 @@ Host *
 ### Known Problems ###
 * You have to `Sync Local -> Remote` manually after renaming and deleting files.
 * Console now has no formatting since Atom 1.17 and 1.18 as @console.show has been changed.
-  * the package still works, i try to find a fix for it and publish it in version 0.8.1
+  * the package still works, i try to find a fix for it and publish it in version 0.8.2
   
 ### Roadmap ###
 * Listen to events
