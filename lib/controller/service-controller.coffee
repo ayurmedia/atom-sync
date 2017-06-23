@@ -93,7 +93,7 @@ module.exports = ServiceController =
     dst = dst.replace /\\/g, "/"
     dst = dst.replace /^([A-Z])\:/ , "/cygdrive/$1"
     @console.show() if not config.behaviour.forgetConsole
-    @console.info "=> Syncing from #{src} to #{dst} "
+    @console.info "=> Syncing from #{src} \n  ... to #{dst} \n"
 
     (require '../service/' + provider)
       src: src,
