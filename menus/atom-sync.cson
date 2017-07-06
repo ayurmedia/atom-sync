@@ -8,6 +8,10 @@
         'command': 'atom-sync-cygwin:configure'
       }
       {
+        'label': 'Init Sync Config'
+        'command': 'atom-sync-cygwin:initialise'
+      }
+      {
         'label': 'Sync Remote -> Local'
         'command': 'atom-sync-cygwin:download-directory'
       }
