@@ -16,7 +16,7 @@ module.exports = AtomSync =
     # @subscriptions.add atom.commands.add 'atom-workspace', 'atom-sync-cygwin:debug': (e) =>
     #   @controller.debug @getProjectPath atom.workspace.getActivePaneItem().buffer.file.path
 
-    @subscriptions.add atom.commands.add '.tree-view.full-menu .header.list-item', 'atom-sync-cygwin:configure': (e) =>
+    @subscriptions.add atom.commands.add '.tree-view .full-menu .header.list-item', 'atom-sync-cygwin:configure': (e) =>
       @controller.onCreate @getSelectedPath e.target
 
     @subscriptions.add atom.commands.add 'atom-workspace', 'atom-sync-cygwin:upload-project': (e) =>

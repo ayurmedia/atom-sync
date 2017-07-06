@@ -13,13 +13,6 @@ module.exports = ConfigHelper =
       fs.writeFileSync config, csonSample
     atom.workspace.open config
 
-  initialize: (f) ->
-    config = @getConfigPath f
-    if not fs.isFileSync config
-      csonSample = cson.stringify @sample
-      fs.writeFileSync config, csonSample
-    atom.workspace.open config
-
   load: (f) ->
     config = @getConfigPath f
     return if not config or not fs.isFileSync config
