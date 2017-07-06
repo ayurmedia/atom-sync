@@ -1,7 +1,7 @@
 {
   "name": "atom-sync-cygwin",
   "main": "./lib/atom-sync-cygwin",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Sync files bidirectionally between remote host and local over ssh+rsync (optimized for Windows with cygwin)",
   "keywords": [
     "sync",
