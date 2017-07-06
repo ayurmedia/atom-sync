@@ -91,7 +91,6 @@ option:
     shell: 'ssh'
     # or
     #shell: '/usr/bin/sshpass -p password ssh -o StrictHostKeyChecking=no -l username'
-
 trigger:                    # Triggers fire after uploading file successfully
                             # which STARTS with following patterns
 
