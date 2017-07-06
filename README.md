@@ -58,7 +58,8 @@ but much [faster](http://stackoverflow.com/questions/20244585/what-is-the-differ
 * Watch water flows.
 
 ### Notice ###
-* Password based login is not supported—at least yet, you have to [assign your key file](https://www.linode.com/docs/security/use-public-key-authentication-with-ssh) and better host name in .ssh/config in advanced. Try to [Simplify Your Life With an SSH Config File](http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/).
+* You have to [assign your key file](https://www.linode.com/docs/security/use-public-key-authentication-with-ssh) and better host name in .ssh/config in advanced. Try to [Simplify Your Life With an SSH Config File](http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/).
+* For password based login you must install [sshpass](https://gist.github.com/arunoda/7790979) and set the `shell` property to  `/usr/bin/sshpass -p password ssh -o StrictHostKeyChecking=no -l username ` in the configuration file.
 
 ### Config File (and Tutorial) ###
 > .sync-config.cson
@@ -88,6 +89,9 @@ option:
     ]
     flags: 'avzpur'         # Advanced option: rsync flags
     shell: 'ssh'
+    # or
+    #shell: '/usr/bin/sshpass -p password ssh -o StrictHostKeyChecking=no -l username'
+
 trigger:                    # Triggers fire after uploading file successfully
                             # which STARTS with following patterns
 
