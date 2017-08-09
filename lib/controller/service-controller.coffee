@@ -56,7 +56,7 @@ module.exports = ServiceController =
         else
           src = obj + (if fs.isDirectorySync obj then path.sep else '')
           dst = @genRemoteString config.remote.user, config.remote.host,
-            if fs.isDirectorySync obj then path.join config.remote.path, relativePath else path.dirname (path.join config.remote.path, relativePath)
+            if fs.isDirectorySync obj then path.join config.remote.path, relativePath else (path.dirname (path.join config.remote.path, relativePath))+path.sep
 
       when 'down'
         if config.behaviour?.alwaysSyncAll is true
