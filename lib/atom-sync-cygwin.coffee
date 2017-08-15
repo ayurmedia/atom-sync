@@ -38,6 +38,12 @@ module.exports = AtomSync =
     @subscriptions.add atom.commands.add 'atom-workspace', 'atom-sync-cygwin:toggle-log-panel': (e) =>
       @controller.toggleConsole()
 
+    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-sync:sync-up': (e) =>
+        @controller.onSync atom.project.getPaths()[0], 'up'
+
+    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-sync:sync-down': (e) =>
+        @controller.onSync atom.project.getPaths()[0], 'down'
+
     # Observe events
 
     @subscriptions.add atom.workspace.observeTextEditors (editor) =>

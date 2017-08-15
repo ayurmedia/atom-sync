@@ -11,7 +11,11 @@
 #   'ctrl-alt-o': 'atom-sync-cygwin:toggle'
 
 '.platform-darwin atom-workspace':
-    'cmd-alt-l': 'atom-sync-cygwin:toggle-log-panel'
+    'cmd-alt-l': 'atom-sync:toggle-log-panel'
+    'cmd-ctrl-alt-up': 'atom-sync:sync-up'
+    'cmd-ctrl-alt-down': 'atom-sync:sync-down'
 
 '.platform-win32 atom-workspace, .platform-linux atom-workspace':
-    'ctrl-alt-l': 'atom-sync-cygwin:toggle-log-panel'
+    'ctrl-alt-l': 'atom-sync:toggle-log-panel'
+    'ctrl-alt-up': 'atom-sync:sync-up'
+    'ctrl-alt-down': 'atom-sync:sync-down'
