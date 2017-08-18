@@ -32,8 +32,6 @@ module.exports = (opt = {}) ->
   progress = opt.progress
   shell = config.option?.shell ? 'ssh'
 
-  [projectDirectory] = atom.project.relativizePath(src)
-
   rsync = new Rsync()
     .shell shell
     .flags flags
@@ -42,7 +40,6 @@ module.exports = (opt = {}) ->
     .output (data) ->
       progress? data.toString('utf-8').trim()
 
-  rsync.cwd(projectDirectory)
   rsync.delete() if config.option?.deleteFiles
   rsync.exclude config.option.exclude if config.option?.exclude
   rsync.execute (err, code, cmd) =>
