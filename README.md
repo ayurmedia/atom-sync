@@ -6,7 +6,7 @@ Inspired by [Sublime SFTP](http://wbond.net/sublime_packages/sftp).
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)[![Build Status](https://travis-ci.org/dingjie/atom-sync.svg?branch=master)](https://travis-ci.org/dingjie/atom-sync)
 
 
-> This package is a clone of atom-sync and has a patch to use cygwin emulation on Windows.
+> This package is a clone of atom-sync and has a patch to use cygwin (or Windows Subsystem for Linux) emulation on Windows.
 If you install "openssh rsync" on windows via cygwin (https://cygwin.org),
 then you can use the plugin also on Windows which then emulates the rsync inside cygwin.
 You need to put your C:/cygwin/bin/ in to %PATH% so that ssh and rsync are used on cmd.exe or atom.exe .
@@ -27,8 +27,9 @@ but much [faster](http://stackoverflow.com/questions/20244585/what-is-the-differ
 
 ### Prerequisite ###
 * Ensure you have `ssh` and `rsync` installed.
+* Alternatively ensure you have ubuntu `bash` installed.
 
-* Special on Windows
+* Special on Windows - Cygwin
   * Install Cygwin from https://cygwin.org
   * Select "openssh" and "rsync" from packages and install them
   * rsync is now available in the cygwin-terminal, but not visible from atom
@@ -43,12 +44,15 @@ but much [faster](http://stackoverflow.com/questions/20244585/what-is-the-differ
   * Add Path to your Cygwin-Installation e.g. "C:\cygwin\bin"
   * close dialogs
 
+* Special on Windows - WSL
+  * Install Windows Subsystem for Linux https://msdn.microsoft.com/en-us/commandline/wsl/install-win10
+
 * now atom should be able to use ssh + rsync
   * to properly use ssh without password with autorized_keys, you need to have .ssh folder etc.
   * in cygwin you can open "cygwin terminal" and check by "ls .ssh"
+  * in WSL you can open "bash" and check by "ls .ssh"
   * maybe you need to create a pub-key with "ssh-keygen", look in internet for further instructions.
   * best to create a pub-key without password, so that you don't have to type password always.
-
 
 ### Quick Start ###
 * Open a project folder to sync in [Atom](http://atom.io).
@@ -78,6 +82,7 @@ behaviour:
     alwaysSyncAll: false    # Sync all files and folders under the project \
                             # instead of syncing single file or folder
 option:
+    wsl: false              # Enable Windows Subsystem for Linux mode
     deleteFiles: true       # Delete files during syncing
     autoHideDelay: 1500     # Time delay to hide console
     exclude: [              # Excluding patterns
@@ -151,6 +156,7 @@ Host *
 
 ### Known Problems ###
 * You have to `Sync Local -> Remote` manually after renaming and deleting files.
+* Triggers not yet functional on WSL.  If you have git bash installed ensure your .ssh folder matches between C:\\Users\\username\\.ssh and your WSL home folder and triggers should still function.
 
 ### Roadmap ###
 * Listen to events
