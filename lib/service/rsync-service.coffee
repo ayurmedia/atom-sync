@@ -23,6 +23,7 @@ yellowpage =
   255: 'SSH connection failed'
 
 module.exports = (opt = {}) ->
+  exe = opt?.exe ? 'rsync'
   src = opt.src
   dst = opt.dst
   config = opt.config
@@ -33,6 +34,7 @@ module.exports = (opt = {}) ->
   shell = config.option?.shell ? 'ssh'
 
   rsync = new Rsync()
+    .executable exe
     .shell shell
     .flags flags
     .source src

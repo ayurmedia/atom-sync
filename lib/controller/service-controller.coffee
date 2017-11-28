@@ -88,14 +88,25 @@ module.exports = ServiceController =
     delay = config.option?.autoHideDelay or 1500
 
     # Fix Unix Path Delimiters for windows with help of cygwin
-    src = src.replace /\\/g, "/"
-    src = src.replace /^([A-Z])\:/ , "/cygdrive/$1"
-    dst = dst.replace /\\/g, "/"
-    dst = dst.replace /^([A-Z])\:/ , "/cygdrive/$1"
+    if config.option?.wsl is true
+      exe = '"' + path.join __dirname, '..', '..', 'bin', 'rsync.bat' + '"'
+      src = src.replace /\\/g, "/"
+      src = src.replace /^([A-Z])\:/ , (search, match) ->
+        "/mnt/" + match.toLowerCase()
+      dst = dst.replace /\\/g, "/"
+      dst = dst.replace /^([A-Z])\:/ , (search, match) ->
+        "/mnt/" + match.toLowerCase()
+    else
+      src = src.replace /\\/g, "/"
+      src = src.replace /^([A-Z])\:/ , "/cygdrive/$1"
+      dst = dst.replace /\\/g, "/"
+      dst = dst.replace /^([A-Z])\:/ , "/cygdrive/$1"
+
     @console.show() if not config.behaviour.forgetConsole
     @console.info "=> Syncing from #{src} \n  ... to #{dst} \n"
 
     (require '../service/' + provider)
+      exe: exe,
       src: src,
       dst: dst,
       config: config,

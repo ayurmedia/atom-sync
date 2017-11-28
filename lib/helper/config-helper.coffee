@@ -51,6 +51,7 @@ module.exports = ConfigHelper =
       autoHideConsole: true
       alwaysSyncAll: false
     option:
+      wsl: false
       deleteFiles: false
       exclude: [
         '.sync-config.cson'
