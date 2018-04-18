@@ -1,3 +1,8 @@
+# NOTICE !
+
+i switched over to PHPStorm and don't use Atom.io anymore. Intellisense/Autocomplete etc. is 100x better than in atom.io. 
+Feel free to use the plugin, but i will probably not update much. 
+
 # atom-sync-cygwin package
 
 atom-sync-cygwin is an Atom package to sync files bidirectionally between remote host and local over ssh+rsync.
