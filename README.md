@@ -98,6 +98,7 @@ option:
         'vendor'
     ]
     flags: 'avzpur'         # Advanced option: rsync flags
+    #chmods: 'Du=rwx,Dgo=rx,Fu=rw,Fog=r' #force the permissions to be set to 755 for Directories and 644 for Files
     shell: 'ssh'
     # or
     #shell: '/usr/bin/sshpass -p password ssh -o StrictHostKeyChecking=no -l username'
