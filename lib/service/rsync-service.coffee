@@ -42,6 +42,7 @@ module.exports = (opt = {}) ->
     .output (data) ->
       progress? data.toString('utf-8').trim()
 
+  rsync.set 'chmod' , config.option.chmods if config.option?.chmods
   rsync.delete() if config.option?.deleteFiles
   rsync.exclude config.option.exclude if config.option?.exclude
   rsync.execute (err, code, cmd) =>
