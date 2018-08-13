@@ -1,7 +1,7 @@
 # NOTICE !
 
-i switched over to PHPStorm and don't use Atom.io anymore. Intellisense/Autocomplete etc. is 100x better than in atom.io. 
-Feel free to use the plugin, but i will probably not update much. 
+i switched over to PHPStorm and don't use Atom.io anymore. Intellisense/Autocomplete etc. is 100x better than in atom.io.
+Feel free to use the plugin, but i will probably not update much.
 
 # atom-sync-cygwin package
 
@@ -90,7 +90,8 @@ option:
     wsl: false              # Enable Windows Subsystem for Linux mode
     deleteFiles: true       # Delete files during syncing
     autoHideDelay: 1500     # Time delay to hide console
-    exclude: [              # Excluding patterns
+    #excludeFrom: '/absolute/path/to/exclude/file' # Use rsync exclude file
+    exclude: [              # Excluding patterns (leave empty array if only using excludeFrom)
         '.sync-config.cson'
         '.git'
         'node_modules'
