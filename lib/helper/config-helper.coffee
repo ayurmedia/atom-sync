@@ -52,6 +52,7 @@ module.exports = ConfigHelper =
       alwaysSyncAll: false
     option:
       wsl: false
+      msys: false
       deleteFiles: false
       exclude: [
         '.sync-config.cson'
