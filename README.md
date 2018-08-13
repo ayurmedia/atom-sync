@@ -91,7 +91,8 @@ option:
     msys: false             # Enable msys paths (wsl option takes priority)
     deleteFiles: true       # Delete files during syncing
     autoHideDelay: 1500     # Time delay to hide console
-    exclude: [              # Excluding patterns
+    #excludeFrom: '/absolute/path/to/exclude/file' # Use rsync exclude file
+    exclude: [              # Excluding patterns (leave empty array if only using excludeFrom)
         '.sync-config.cson'
         '.git'
         'node_modules'
