@@ -96,6 +96,13 @@ module.exports = ServiceController =
       dst = dst.replace /\\/g, "/"
       dst = dst.replace /^([A-Z])\:/ , (search, match) ->
         "/mnt/" + match.toLowerCase()
+    else if config.option?.msys is true
+      src = src.replace /\\/g, "/"
+      src = src.replace /^([A-Z])\:/ , (search, match) ->
+        "/" + match.toLowerCase()
+      dst = dst.replace /\\/g, "/"
+      dst = dst.replace /^([A-Z])\:/ , (search, match) ->
+        "/" + match.toLowerCase()
     else
       src = src.replace /\\/g, "/"
       src = src.replace /^([A-Z])\:/ , "/cygdrive/$1"
